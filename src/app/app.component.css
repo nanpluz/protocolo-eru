@@ -1,0 +1,8 @@
+.hidden {
+    opacity: 0;
+    max-height: 0.001px;
+    max-width: 0.001px;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+}

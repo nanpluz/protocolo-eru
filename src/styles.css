@@ -1,0 +1,48 @@
+@import '../node_modules/ngx-bar-rating/themes/br-stars-theme.scss';
+@import 'quill/dist/quill.snow.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: "Outfit", Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --base-gap: .5rem;
+    color-scheme: light;
+}
+
+html {
+    background: #fff !important;
+}
+
+/* Disable dark mode from OS/browser */
+@media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: light;
+    }
+  }
+  
+  /* PrimeNG + Quill override */
+  :root {
+    --surface-ground: #ffffff !important;
+    --surface-card: #ffffff !important;
+    --surface-section: #ffffff !important;
+    --text-color: #000000 !important;
+    --surface-overlay: #ffffff !important;
+  }
+  
+  /* Quill background force light */
+  .ql-container,
+  .ql-editor {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+  
+  /* Fix autofill and form controls that force dark styles */
+  input, textarea, select {
+    background-color: #fff !important;
+    color: #000 !important;
+  }
+  
