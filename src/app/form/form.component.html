@@ -38,7 +38,7 @@
         <p-button [disabled]="!everythingFilled()" (onClick)="executeRecaptcha(reCaptcha)" [loading]="loading" severity="info" label="Realizar envio" [fluid]="true"></p-button>
         <re-captcha style="opacity: 0; pointer-events: none" #reCaptcha size="invisible" siteKey="6LcCQYYqAAAAABtj_-tHVPET84ot0zckEkXe_IJZ" (resolved)="submit($event)"></re-captcha>
 
-        <p-message severity="success" *ngIf="infoSended">Informações enviadas com sucesso! Caso você seja pré-selecionado para entrevista, te informaremos pelo WhatsApp.</p-message>
-        <p-message severity="error" *ngIf="maximumSizeExceeded">Você excedeu o tamanho máximo de 10MB em seus anexos.</p-message>
+        <p-message severity="success" *ngIf="infoSended">Protocolo submetido com sucesso!.</p-message>
+        <p-message severity="error" *ngIf="maximumSizeExceeded">Você excedeu o tamanho máximo de 10MB em seu protocolo.</p-message>
     </div>
 </div>
