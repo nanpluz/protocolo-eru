@@ -11,28 +11,28 @@
         <!-- <span class="text-gray-600">Qual o atendente?</span> -->
 
         <p-floatlabel variant="in">
-            <p-select id="in_label" [fluid]="true" [options]="attendants" [(ngModel)]="attendant" [ngModelOptions]="{standalone: true}"></p-select>
+            <p-select id="in_label" [fluid]="true" [options]="attendants" [(ngModel)]="form.attendant" [ngModelOptions]="{standalone: true}"></p-select>
             <label for="in_label">Atendente</label>
         </p-floatlabel>
 
         <p-floatlabel variant="in">
-            <input [fluid]="true" pInputText type="text" id="in_label" name="name" [(ngModel)]="form.lastName" [ngModelOptions]="{standalone: true}" required>
+            <input [fluid]="true" pInputText type="text" id="in_label" name="name" [(ngModel)]="form.customer" [ngModelOptions]="{standalone: true}" required>
             <label for="in_label">Cliente</label>
         </p-floatlabel>
 
         <div>
             <h1 class="text-zinc-900">Problema</h1>
-            <quill-editor class="w-full"></quill-editor>
+            <quill-editor class="w-full" (onContentChanged)="updateProblem($event)"></quill-editor>
         </div>
 
         <div class="w-full">
             <h1 class="text-zinc-900">Solução</h1>
-            <quill-editor class="w-full"></quill-editor>
+            <quill-editor class="w-full" (onContentChanged)="updateSolution($event)"></quill-editor>
         </div>
 
         <div>
             <h1 class="text-zinc-900">Dificuldade</h1>
-            <bar-rating [(rate)]="rate" theme="stars"/>
+            <bar-rating [(rate)]="form.rating" theme="stars"/>
         </div>
 
         <p-button [disabled]="!everythingFilled()" (onClick)="executeRecaptcha(reCaptcha)" [loading]="loading" severity="info" label="Realizar envio" [fluid]="true"></p-button>
